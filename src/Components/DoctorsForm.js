@@ -13,7 +13,10 @@ export const DoctorsForm = () => {
     const [gender, setGender] = useState()
     const [workingDays, setWorkingDays] = useState()
     const [bio, seBio] = useState()
-    const createDoctor = (name, specialty, email, dateOfBirth, totalPatients, phoneNumber, ratings, gender, workingDays, bio) => {
+    const [experience, setExperience] = useState()
+
+
+    const createDoctor = () => {
         saveMedicalFacilities(name, specialty, email, dateOfBirth, totalPatients, phoneNumber, ratings, gender, workingDays, bio)
     }
     return (
