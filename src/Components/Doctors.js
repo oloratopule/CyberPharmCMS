@@ -24,16 +24,12 @@ export const Doctors = () => {
                 <div className="screens">
                 <Link to="/Dashboard" className="dashboard">Dashboard</Link>
                 <Link to="/Appointment" className="appt">Appointment</Link>
-                <Link to="/Doctors" className="doctor">Doctors</Link>
+                <Link to="/DoctorsForm" className="doctorsForm">DoctorsForm</Link>
                 <Link to="/Patients" className="doctor">Patients</Link>
                 </div>
             </div>
             <p className="text2">Doctors</p>
-            <div className="show">
-                <button className="btn">Delete Selected</button>
-                {/* <p className="btn">Delete Selected</p> */}
-
-            </div>
+          
             <div className="appt2">
                 <div className="show">
                     <h5 style={{ marginLeft: "20px", marginTop: "20px" }}>Show</h5>

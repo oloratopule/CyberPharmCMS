@@ -2,21 +2,14 @@ import React, { useState } from 'react';
 import '../App.css';
 import nurse from '../../src/nurse.jpg';
 import { Link } from 'react-router-dom';
-import { Login } from '../Auth/SignUp';
-
-
-
-
+import { login } from '../Auth/SignUp';
 export const LogIn = () => {
-
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
-
-    const Register = (() => {
+    const Form = (() => {
         console.log(email, password)
-        Login(email, password)
+        login(email, password)
     })
-
     return (
         <div>
             <div className="rectangle1">
@@ -30,7 +23,7 @@ export const LogIn = () => {
                                 <input
                                     type="text"
                                     style={{ width: "200px" }}
-                                    onChangeText={(email) => setEmail(email.target.value)}
+                                    onChange={(email) => setEmail(email.target.value)}
                                 />
                             </label>
                         </form>
@@ -39,8 +32,7 @@ export const LogIn = () => {
                                 <input
                                     type="text"
                                     style={{ width: "200px" }}
-                                    onChangeText={(password) => setPassword(password.target.value)}
-
+                                    onChange={(password) => setPassword(password.target.value)}
                                 />
                             </label>
                         </form>
@@ -50,16 +42,19 @@ export const LogIn = () => {
                                 <Link to="SignUp" style={{ color: "white" }}>Sign Up</Link>
                             </nav>
                         </p>
-                        <nav>
-                            <Link className="btn" onClick={Register}>LOGIN</Link>
-                        </nav>
-
-
+                            <button className="btn"  onClick={Form}>LOGIN</button>
                     </div>
                 </div>
                 <img src={nurse} className="image" />
             </div>
-
         </div>
     )
 }
+
+
+
+
+
+
+
+

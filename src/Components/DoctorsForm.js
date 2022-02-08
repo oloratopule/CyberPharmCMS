@@ -1,10 +1,7 @@
 import React, { useState } from 'react';
 // import './App.css'
 import { Link } from 'react-router-dom';
-
-
 import { saveMedicalFacilities } from '../databaseServices/services';
-
 export const DoctorsForm = () => {
     const [name, setName] = useState()
     const [specialty, seSpecialty] = useState()
@@ -16,11 +13,9 @@ export const DoctorsForm = () => {
     const [gender, setGender] = useState()
     const [workingDays, setWorkingDays] = useState()
     const [bio, seBio] = useState()
-
     const createDoctor = (name, specialty, email, dateOfBirth, totalPatients, phoneNumber, ratings, gender, workingDays, bio) => {
         saveMedicalFacilities(name, specialty, email, dateOfBirth, totalPatients, phoneNumber, ratings, gender, workingDays, bio)
     }
-
     return (
         <div>
             <div className="header">
@@ -52,9 +47,7 @@ export const DoctorsForm = () => {
                             <input type="text" className="block" />
                         </label>
                     </form>
-
                 </div>
-
             </div>
             <div className="info">
                 <form className="input2">
@@ -69,7 +62,6 @@ export const DoctorsForm = () => {
                         <input type="text" className="block" />
                     </label>
                 </form>
-
             </div>
             <div className="info">
                 <form style={{ marginLeft: "550px", marginTop: "-175px" }}>
@@ -84,7 +76,6 @@ export const DoctorsForm = () => {
                         <input type="text" className="block" />
                     </label>
                 </form>
-
             </div>
             <div className="info">
                 <form style={{ marginLeft: "550px", marginTop: "-85px" }}>
@@ -99,7 +90,6 @@ export const DoctorsForm = () => {
                         <input type="text" className="block" />
                     </label>
                 </form>
-
             </div>
             <div className="info">
                 <form style={{ marginLeft: "550px", marginTop: "10px" }}>
@@ -114,7 +104,6 @@ export const DoctorsForm = () => {
                         <input type="text" className="block" />
                     </label>
                 </form>
-
             </div>
             <div className="info">
                 <form style={{ marginLeft: "550px", marginTop: "25px" }}>
@@ -123,11 +112,8 @@ export const DoctorsForm = () => {
                         <input type="text" className="bio" />
                     </label>
                 </form>
-
             </div>
-
             <button className="add">Add</button>
-
         </div>
     )
 }

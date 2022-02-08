@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 // import './App.css'
 import { db } from '../Config/Firebase';
 import { Link } from 'react-router-dom';
-
 export const Appointment = () => {
     const [doctor, setDoctor] = useState()
     const viewAppointment = () => {
@@ -15,23 +14,21 @@ export const Appointment = () => {
                 setDoctor(dis)
             })
     }
-
     return (
         <div>
             <div className="header">
                 <h1 className="heading">CyberPharm</h1>
                 <div className="screens">
-                    <Link to="/Dashboard" className="dashboard">Dashboard</Link>
-                    <Link to="/Appointment" className="appt">Appointment</Link>
-                    <Link to="/Doctors" className="doctor">Doctors</Link>
-                    <Link to="/Patients" className="doctor">Patients</Link>
+                <Link to="/Dashboard" className="dashboard">Dashboard</Link>
+                <Link to="/Doctors" className="doctor">Doctors</Link>
+                <Link to="/DoctorsForm" className="doctorsForm">DoctorsForm</Link>
+                <Link to="/Patients" className="doctor">Patients</Link>
                 </div>
             </div>
             <p className="text2">Appointment</p>
             <div className="show">
                 <button className="btn">Delete Selected</button>
                 {/* <p className="btn">Delete Selected</p> */}
-
             </div>
             <div className="appt2">
                 <div className="show">
@@ -51,7 +48,6 @@ export const Appointment = () => {
                         type="text"
                         // placeholder="Search name"
                         style={{ height: "30px", marginLeft: "10px", marginTop: "20px" }}
-
                     />
                 </div>
                 <div className="appt-bar">
@@ -75,7 +71,6 @@ export const Appointment = () => {
                     <p className="remain">Remaining</p>
                     <p className="cancel">Cancelled</p>
                     <h6 style={{ marginLeft: "100px" }}>View</h6>
-
                 </div>
                 <div className="names">
                     <h6 style={{ marginLeft: "10px" }}> 1</h6>
@@ -87,7 +82,6 @@ export const Appointment = () => {
                     <p className="remain">Remaining</p>
                     <p className="cancel">Cancelled</p>
                     <h6 style={{ marginLeft: "100px" }}>View</h6>
-
                 </div>
                 <div className="names">
                     <h6 style={{ marginLeft: "10px" }}> 1</h6>
@@ -99,7 +93,6 @@ export const Appointment = () => {
                     <p className="payed">Paid</p>
                     <p className="complete">Completed</p>
                     <h6 style={{ marginLeft: "100px", color: "#3E64FF" }}>View</h6>
-
                 </div>
                 <div className="names">
                     <h6 style={{ marginLeft: "10px" }}> 1</h6>
@@ -111,7 +104,6 @@ export const Appointment = () => {
                     <p className="remain">Remaining</p>
                     <p className="cancel">Cancelled</p>
                     <h6 style={{ marginLeft: "100px" }}>View</h6>
-
                 </div>
                 <div className="names">
                     <h6 style={{ marginLeft: "10px" }}> 1</h6>
@@ -123,7 +115,6 @@ export const Appointment = () => {
                     <p className="payed">Paid</p>
                     <p className="complete">Completed</p>
                     <h6 style={{ marginLeft: "100px", color: "#3E64FF" }}>View</h6>
-
                 </div>
                 <div className="names">
                     <h6 style={{ marginLeft: "10px" }}> 1</h6>
@@ -135,7 +126,6 @@ export const Appointment = () => {
                     <p className="remain">Remaining</p>
                     <p className="cancel">Cancelled</p>
                     <h6 style={{ marginLeft: "100px", color: "#3E64FF" }}>View</h6>
-
                 </div>
                 <div className="names">
                     <h6 style={{ marginLeft: "10px" }}> 1</h6>
@@ -147,7 +137,6 @@ export const Appointment = () => {
                     <p className="remain">Remaining</p>
                     <p className="cancel">Cancelled</p>
                     <h6 style={{ marginLeft: "100px" }}>View</h6>
-
                 </div>
                 <div className="names">
                     <h6 style={{ marginLeft: "10px" }}> 1</h6>
@@ -159,7 +148,6 @@ export const Appointment = () => {
                     <p className="payed">Paid</p>
                     <p className="complete">Completed</p>
                     <h6 style={{ marginLeft: "100px", color: "#3E64FF" }}>View</h6>
-
                 </div>
                 <div className="names">
                     <h6 style={{ marginLeft: "10px" }}> 1</h6>
@@ -171,7 +159,6 @@ export const Appointment = () => {
                     <p className="payed">Paid</p>
                     <p className="complete">Completed</p>
                     <h6 style={{ marginLeft: "100px", color: "#3E64FF" }}>View</h6>
-
                 </div>
                 <div className="names">
                     <h6 style={{ marginLeft: "10px" }}> 1</h6>
@@ -183,15 +170,20 @@ export const Appointment = () => {
                     <p className="remain">Remaining</p>
                     <p className="cancel">Cancelled</p>
                     <h6 style={{ marginLeft: "100px" }}>View</h6>
-
                 </div>
                 <div className="show">
                     <p className="text3">Showing 1 To 9 Of 9 Entries</p>
                 </div>
-
             </div>
-
-
         </div>
     )
 }
+
+
+
+
+
+
+
+
+

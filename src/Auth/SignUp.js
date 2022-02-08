@@ -1,63 +1,54 @@
 import { firebase } from '../Config/Firebase';
-import { useNavigate } from 'react-router-dom'
-
-const sinup = ((email, password) => {
-
-  firebase.auth().createUserWithEmailAndPassword(email, password)
-    .then((userCredential) => {
-      // Signed in 
-      const user = userCredential.user;
-
-      firebase.firestore().collection('Doctors').add({
-        email: email,
-        password: password
+import {BrowserRouter, Routes, Route, Link} from 'react-router-dom';
+const sinup = ((email, password, props) => {
+  if (email == "" && password == "") {
+    alert("Username and Email Field cannot be empty!")
+  } else if (email == "") {
+    alert("Fill in email!")
+  } else if (password == "") {
+    alert("Fill in password!")
+  } else {
+    firebase.auth().createUserWithEmailAndPassword(email, password)
+      .then((userCredential) => {
+        // Signed in
+        const user = userCredential.user;
+        props.push('/Dashboard')
+        // ...
       })
-
-
-      alert("gggvgv")
-      // ...
-    })
-    .catch((error) => {
-      const errorCode = error.code;
-      const errorMessage = error.message;
-      console.log(errorMessage)
-      // ..
-
-      alert("error")
-    });
-
+      .catch((error) => {
+        const errorCode = error.code;
+        const errorMessage = error.message;
+        console.log(errorMessage)
+        // ..
+        alert("error")
+      });
+  }
 })
-
-
-const Login = ((email, password) => {
-  const navigate = useNavigate()
-
-  firebase.auth().signInWithEmailAndPassword(email, password)
+const login = ((email, password) => {
+  if (email == "" && password == "") {
+    alert("Username and Email Field cannot be empty!")
+  } else if (email == "") {
+    alert ("Fill in email!")
+  } else if (password == "") {
+    alert ("Fill in password!")
+  } else {
+    firebase.auth().signInWithEmailAndPassword(email, password)
     .then((userCredential) => {
-      // Signed in 
+      // Signed in
       const user = userCredential.user;
-
-      firebase.firestore().collection('Doctors').add({
-        email: email,
-        password: password
-      })
-      navigate('/Dashboard')
-
-      alert("Logged In")
+      alert("Welcome")
       // ...
     })
     .catch((error) => {
       const errorCode = error.code;
       const errorMessage = error.message;
       // ..
-
       alert("error")
     });
-
+  }
 })
-
-
-
-
-
-export { sinup, Login }
+const logout = (() => {
+  firebase.auth().signOut()
+    .then()
+})
+export { sinup, login }
