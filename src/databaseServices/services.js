@@ -2,7 +2,7 @@ import { firebase } from '../Config/Firebase';
 // const email, description, phonenumber, exprience, workingtime, backgroundeducation
 
 
-const saveDoctor = ((name, specialty, email, dateOfBirth, totalPatients, phoneNumber, ratings, gender, workingDays, bio) => {
+const saveDoctor = ((name, specialty, email, dateOfBirth, totalPatients, phoneNumber, ratings, gender, workingDays, bio, experience) => {
     firebase.firestore().collection("Doctors").add({
         name: name,
         specialty: specialty,
@@ -13,7 +13,8 @@ const saveDoctor = ((name, specialty, email, dateOfBirth, totalPatients, phoneNu
         ratings: ratings,
         gender: gender,
         backgroundeducaworkingDaystion: workingDays,
-        bio: bio
+        bio: bio,
+        experience: experience
 
     }).then((docRef) => {
         console.log('Document successfully written with ID: ', docRef.id)
@@ -24,12 +25,16 @@ const saveDoctor = ((name, specialty, email, dateOfBirth, totalPatients, phoneNu
 })
 
 
-const saveMedicalFacilities = ((longitude, latitude, telephone, fascilityName, category) => {
+const saveMedicalFacilities = ((name, longitude, latitude, image, allSpecialists, availabilty, address, about, category) => {
     firebase.firestore().collection("MedicalFascilities").add({
-        latitude: latitude,
+        name: name,
         longitude: longitude,
-        telephone: telephone,
-        fascilityName: fascilityName,
+        latitude: latitude,
+        image: image,
+        allSpecialists: allSpecialists,
+        availabilty: availabilty,
+        address: address,
+        about: about,
         category: category
 
     }).then((docRef) => {

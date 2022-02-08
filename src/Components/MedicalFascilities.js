@@ -1,21 +1,29 @@
 import React, { useState } from 'react';
-// import './App.css'
-import { Link } from 'react-router-dom';
 import { saveMedicalFacilities } from '../databaseServices/services';
-export const DoctorsForm = () => {
-    const [name, setName] = useState()
-    const [specialty, seSpecialty] = useState()
-    const [email, setEmail] = useState()
-    const [dateOfBirth, setDateOfBirth] = useState()
-    const [totalPatients, setTotalPatients] = useState()
-    const [phoneNumber, sePhoneNumber] = useState()
-    const [ratings, setRatings] = useState()
-    const [gender, setGender] = useState()
-    const [workingDays, setWorkingDays] = useState()
-    const [bio, seBio] = useState()
-    const createDoctor = (name, specialty, email, dateOfBirth, totalPatients, phoneNumber, ratings, gender, workingDays, bio) => {
-        saveMedicalFacilities(name, specialty, email, dateOfBirth, totalPatients, phoneNumber, ratings, gender, workingDays, bio)
+import { Link } from 'react-router-dom';
+
+export function MedicalFascilities() {
+
+    const [name, setName] = useState("")
+    const [latitude, setLatitude] = useState("")
+    const [longitude, setLongitude] = useState("")
+    const [image, seImage] = useState("")
+    const [allSpecialists, setAllSpecialitst] = useState("")
+    const [availabilty, setAvailabilty] = useState("")
+    const [address, setAddres] = useState("")
+    const [about, setAbout] = useState("")
+    const [category, setCategory] = useState("")
+    const [ratings, setRatings] = useState("")
+
+    const createDoctor = () => {
+        if (name === "" && longitude === "" && latitude === "" && image === "" && allSpecialists === "" && availabilty === "" && address === "" && about === "" && category === "") {
+            alert("Please complete the form")
+        } else {
+            saveMedicalFacilities(name, longitude, latitude, image, allSpecialists, availabilty, address, about, category)
+
+        }
     }
+
     return (
         <div>
             <div className="header">
@@ -27,8 +35,8 @@ export const DoctorsForm = () => {
                     <Link to="/Patients" className="doctor">Patients</Link>
                 </div>
             </div>
-            <p className="text2">Edit Doctor Information</p>
-            <h5 className="di">Doctors Image*</h5>
+            <p className="text2">Edit Fascility Information</p>
+            <h5 className="di">Fascility Image*</h5>
             <div className="info">
                 <div style={{ display: "flex" }}>
                     <svg xmlns="http://www.w3.org/2000/svg" width="350" height="350" fill="currentColor" class="bi bi-person-square" viewBox="0 0 16 16" style={{ marginLeft: "40px" }}>
@@ -43,45 +51,49 @@ export const DoctorsForm = () => {
                     </form>
                     <form className="input">
                         <label>
-                            <h5>Specialty*</h5>
-                            <input type="text" className="block" onChange={(v) => seSpecialty(v.target.value)} />
+                            <h5>longitude*</h5>
+                            <input type="text" className="block" onChange={(v) => setLongitude(v.target.value)} />
                         </label>
                     </form>
+
                 </div>
+
             </div>
             <div className="info">
                 <form className="input2">
                     <label>
-                        <h5>Email*</h5>
-                        <input type="text" className="block" />
+                        <h5>latitude*</h5>
+                        <input type="text" className="block" onChange={(v) => setLatitude(v.target.value)} />
                     </label>
                 </form>
                 <form style={{ marginLeft: "200px", marginTop: "-265px" }}>
                     <label>
-                        <h5>Experience(in years)*</h5>
-                        <input type="text" className="block" onChange={(v) => setExperience(v.target.value)} />
+                        <h5>All Specialists*</h5>
+                        <input type="text" className="block" onChange={(v) => setAllSpecialitst(v.target.value)} />
                     </label>
                 </form>
+
             </div>
             <div className="info">
                 <form style={{ marginLeft: "550px", marginTop: "-175px" }}>
                     <label>
-                        <h5>Date of Birth*</h5>
-                        <input type="text" className="block" onChange={(v) => setDateOfBirth(v.target.value)} />
+                        <h5>Availablity*</h5>
+                        <input type="text" className="block" onChange={(v) => setAvailabilty(v.target.value)} />
                     </label>
                 </form>
                 <form style={{ marginLeft: "200px", marginTop: "-175px" }}>
                     <label>
-                        <h5>No. of Patients Worked With*</h5>
-                        <input type="text" className="block" onChange={(v) => setTotalPatients(v.target.value)} />
+                        <h5>Address*</h5>
+                        <input type="text" className="block" onChange={(v) => setAddres(v.target.value)} />
                     </label>
                 </form>
+
             </div>
             <div className="info">
                 <form style={{ marginLeft: "550px", marginTop: "-85px" }}>
                     <label>
-                        <h5>Phone Number*</h5>
-                        <input type="text" className="block" onChange={(v) => sePhoneNumber(v.target.value)} />
+                        <h5>About*</h5>
+                        <input type="text" className="block" onChange={(v) => setAbout(v.target.value)} />
                     </label>
                 </form>
                 <form style={{ marginLeft: "200px", marginTop: "-85px" }}>
@@ -90,30 +102,27 @@ export const DoctorsForm = () => {
                         <input type="text" className="block" onChange={(v) => setRatings(v.target.value)} />
                     </label>
                 </form>
+
             </div>
             <div className="info">
                 <form style={{ marginLeft: "550px", marginTop: "10px" }}>
                     <label>
                         <h5>Gender*</h5>
-                        <input type="text" className="block" onChange={(v) => setGender(v.target.value)} />
+                        <input type="text" className="block" onChange={(v) => setName(v.target.value)} />
                     </label>
                 </form>
                 <form style={{ marginLeft: "200px", marginTop: "10px" }}>
                     <label>
-                        <h5>Working Days and Time*</h5>
-                        <input type="text" className="block" onChange={(v) => setWorkingDays(v.target.value)} />
+                        <h5>Category*</h5>
+                        <input type="text" className="block" onChange={(v) => setCategory(v.target.value)} />
                     </label>
                 </form>
+
             </div>
-            <div className="info">
-                <form style={{ marginLeft: "550px", marginTop: "25px" }}>
-                    <label>
-                        <h5>Professional Bio*</h5>
-                        <input type="text" className="bio" onChange={(v) => seBio(v.target.value)} />
-                    </label>
-                </form>
-            </div>
-            <button className="add">Add</button>
+
+
+            <button className="add" onClick={createDoctor}>Add</button>
+
         </div>
     )
 }
