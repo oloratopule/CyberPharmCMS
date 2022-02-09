@@ -24,6 +24,7 @@ export const DoctorsForm = () => {
             saveDoctor(about, email, experience, name, patients, phone, profileImage, ratings, specialization, workingTime)
 
         }
+        
     }
 
     return (
@@ -35,6 +36,7 @@ export const DoctorsForm = () => {
                     <Link to="/Appointment" className="appt">Appointment</Link>
                     <Link to="/Doctors" className="doctor">Doctors</Link>
                     <Link to="/Patients" className="doctor">Patients</Link>
+                    <Link to="/MedicalFascilities" className="doctor">medicalfasilities</Link>
                 </div>
             </div>
             <p className="text2">Edit Doctor Information</p>

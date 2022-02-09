@@ -10,6 +10,7 @@ import { DoctorsForm } from './Components/DoctorsForm';
 import { Patients } from './Components/Patients';
 import { MedicalFascilities } from './Components/MedicalFascilities'
 import { getBookings } from './databaseServices/services'
+import UploadImage from './Components/UploadImage';
 
 function App() {
 
@@ -19,13 +20,15 @@ function App() {
   }, [])
   return (
     <BrowserRouter>
-    <Routes>
-    
+    <Routes>    
       <Route path='/' element={<Dashboard/>}/>
       <Route path='Appointment' element={<Appointment/>}/>
       <Route path='Doctors' element={<Doctors/>}/>
       <Route path='DoctorsForm' element={<DoctorsForm/>}/>
+      <Route path='MedicalFascilities' element={<MedicalFascilities/>}/>
       <Route path='Patients' element={<Patients/>}/>
+      <Route path='Dashboard' element={<Dashboard/>}/>
+      <Route path='UploadImage' element={<UploadImage/>}/>
     </Routes>
     </BrowserRouter>
   );

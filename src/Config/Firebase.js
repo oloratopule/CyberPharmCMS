@@ -1,6 +1,7 @@
 import firebase from 'firebase/compat/app';
 import 'firebase/compat/auth';
 import 'firebase/compat/firestore';
+import 'firebase/storage'
 const firebaseConfig = {
     apiKey: "AIzaSyBLerc0KtLLLbPz8z-VqwtejW9_J57BeYw",
     authDomain: "cyberpharm-9a581.firebaseapp.com",
@@ -13,5 +14,5 @@ const firebaseConfig = {
 const app = firebase.initializeApp(firebaseConfig)
 export const db = firebase.firestore(app);
 export const ContactsRef = db.collection("Contacts");
-
+export const storage = firebase.storage()
 export { firebase };
