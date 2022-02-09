@@ -23,9 +23,9 @@ export const Dashboard = () => {
             <div className="header">
                 <h1 className="heading">CyberPharm</h1>
                 <div className="screens">
-                <Link to="/Dashboard" className="dashboard">Dashboard</Link>
                 <Link to="/Appointment" className="appt">Appointment</Link>
                 <Link to="/Doctors" className="doctor">Doctors</Link>
+                <Link to="/DoctorsForm" className="doctorsForm">DoctorsForm</Link>
                 <Link to="/Patients" className="doctor">Patients</Link>
                 </div>
             </div>

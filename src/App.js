@@ -19,16 +19,14 @@ function App() {
   }, [])
   return (
     <BrowserRouter>
-      <Routes>
-        <Route path='/' element={<LogIn />} />
-        <Route path='SignUp' element={<SignUp />} />
-        <Route path='Dashboard' element={<Dashboard />} />
-        <Route path='Appointment' element={<Appointment />} />
-        <Route path='Doctors' element={<Doctors />} />
-        <Route path='DoctorsForm' element={<DoctorsForm />} />
-        <Route path='Patients' element={<Patients />} />
-        <Route path='MedicalFascilities' element={<MedicalFascilities />} />
-      </Routes>
+    <Routes>
+    
+      <Route path='/' element={<Dashboard/>}/>
+      <Route path='Appointment' element={<Appointment/>}/>
+      <Route path='Doctors' element={<Doctors/>}/>
+      <Route path='DoctorsForm' element={<DoctorsForm/>}/>
+      <Route path='Patients' element={<Patients/>}/>
+    </Routes>
     </BrowserRouter>
   );
 }

@@ -21,7 +21,7 @@ export const DoctorsForm = () => {
         if (about === "" && email === "" && experience === "" && name === "" && patients === "" && phone === "" /*{&& profileImage === ""}*/ && ratings === "" && specialization === "" && workingTime === "") {
             alert("Pleese complete the form")
         } else {
-            saveDoctor(about, email, experience, name, patients, phone, ratings, specialization, workingTime)
+            saveDoctor(about, email, experience, name, patients, phone, profileImage, ratings, specialization, workingTime)
 
         }
     }
@@ -65,7 +65,7 @@ export const DoctorsForm = () => {
                 <form className="input2">
                     <label>
                         <h5>Email*</h5>
-                        <input type="text" className="block" />
+                        <input type="text" className="block" onChange={(v) => setEmail(v.target.value)} />
                     </label>
                 </form>
                 <form style={{ marginLeft: "200px", marginTop: "-265px" }}>
