@@ -2,19 +2,18 @@ import { firebase } from '../Config/Firebase';
 // const email, description, phonenumber, exprience, workingtime, backgroundeducation
 
 
-const saveDoctor = ((name, specialty, email, dateOfBirth, totalPatients, phoneNumber, ratings, gender, workingDays, bio, experience) => {
+const saveDoctor = ((about, email, experience, name, patients, phone, profileImage, ratings, specialization, workingTime) => {
     firebase.firestore().collection("Doctors").add({
-        name: name,
-        specialty: specialty,
-        email: email,
-        dateOfBirth: dateOfBirth,
-        totalPatients: totalPatients,
-        phoneNumber: phoneNumber,
-        ratings: ratings,
-        gender: gender,
-        backgroundeducaworkingDaystion: workingDays,
-        bio: bio,
-        experience: experience
+        About: about,
+        Email: email,
+        Experience: experience,
+        Name: name,
+        Patients: patients,
+        Phone: phone,
+        ProfileImage: profileImage,
+        Ratings: ratings,
+        Specialization: specialization,
+        WorkingTime: workingTime
 
     }).then((docRef) => {
         console.log('Document successfully written with ID: ', docRef.id)

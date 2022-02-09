@@ -6,23 +6,22 @@ import { Link } from 'react-router-dom';
 import { saveDoctor } from '../databaseServices/services';
 
 export const DoctorsForm = () => {
-    const [name, setName] = useState("")
-    const [specialty, seSpecialty] = useState("")
+    const [about, setAbout] = useState("")
     const [email, setEmail] = useState("")
     const [experience, setExperience] = useState("")
-    const [dateOfBirth, setDateOfBirth] = useState("")
-    const [totalPatients, setTotalPatients] = useState("")
-    const [phoneNumber, sePhoneNumber] = useState("")
+    const [name, setName] = useState("")
+    const [patients, setPateints] = useState("")
+    const [phone, setPhone] = useState("")
+    const [profileImage, setProfileImage] = useState("")
     const [ratings, setRatings] = useState("")
-    const [gender, setGender] = useState("")
-    const [workingDays, setWorkingDays] = useState("")
-    const [about, seBio] = useState("")
+    const [specialization, setSpecialization] = useState("")
+    const [workingTime, setWorkingTime] = useState("")
 
     const createDoctor = () => {
-        if (name === "" && specialty === "" && email === "" && dateOfBirth === "" && totalPatients === "" && phoneNumber === "" && ratings === "" && gender === "" && workingDays === "" && about === "" && experience === "") {
+        if (about === "" && email === "" && experience === "" && name === "" && patients === "" && phone === "" /*{&& profileImage === ""}*/ && ratings === "" && specialization === "" && workingTime === "") {
             alert("Pleese complete the form")
         } else {
-            saveDoctor(name, specialty, email, dateOfBirth, totalPatients, phoneNumber, ratings, gender, workingDays, about, experience)
+            saveDoctor(about, email, experience, name, patients, phone, ratings, specialization, workingTime)
 
         }
     }
@@ -55,7 +54,7 @@ export const DoctorsForm = () => {
                     <form className="input">
                         <label>
                             <h5>Specialty*</h5>
-                            <input type="text" className="block" onChange={(v) => seSpecialty(v.target.value)} />
+                            <input type="text" className="block" onChange={(v) => setSpecialization(v.target.value)} />
                         </label>
                     </form>
 
@@ -78,16 +77,11 @@ export const DoctorsForm = () => {
 
             </div>
             <div className="info">
+
                 <form style={{ marginLeft: "550px", marginTop: "-175px" }}>
                     <label>
-                        <h5>Date of Birth*</h5>
-                        <input type="text" className="block" onChange={(v) => setDateOfBirth(v.target.value)} />
-                    </label>
-                </form>
-                <form style={{ marginLeft: "200px", marginTop: "-175px" }}>
-                    <label>
                         <h5>No. of Patients Worked With*</h5>
-                        <input type="text" className="block" onChange={(v) => setTotalPatients(v.target.value)} />
+                        <input type="text" className="block" onChange={(v) => setPateints(v.target.value)} />
                     </label>
                 </form>
 
@@ -96,10 +90,10 @@ export const DoctorsForm = () => {
                 <form style={{ marginLeft: "550px", marginTop: "-85px" }}>
                     <label>
                         <h5>Phone Number*</h5>
-                        <input type="text" className="block" onChange={(v) => sePhoneNumber(v.target.value)} />
+                        <input type="text" className="block" onChange={(v) => setPhone(v.target.value)} />
                     </label>
                 </form>
-                <form style={{ marginLeft: "200px", marginTop: "-85px" }}>
+                <form style={{ marginLeft: "200px", marginTop: "-175px" }}>
                     <label>
                         <h5>Ratings*</h5>
                         <input type="text" className="block" onChange={(v) => setRatings(v.target.value)} />
@@ -108,16 +102,11 @@ export const DoctorsForm = () => {
 
             </div>
             <div className="info">
+
                 <form style={{ marginLeft: "550px", marginTop: "10px" }}>
                     <label>
-                        <h5>Gender*</h5>
-                        <input type="text" className="block" onChange={(v) => setGender(v.target.value)} />
-                    </label>
-                </form>
-                <form style={{ marginLeft: "200px", marginTop: "10px" }}>
-                    <label>
                         <h5>Working Days and Time*</h5>
-                        <input type="text" className="block" onChange={(v) => setWorkingDays(v.target.value)} />
+                        <input type="text" className="block" onChange={(v) => setWorkingTime(v.target.value)} />
                     </label>
                 </form>
 
@@ -126,7 +115,7 @@ export const DoctorsForm = () => {
                 <form style={{ marginLeft: "550px", marginTop: "25px" }}>
                     <label>
                         <h5>Professional Bio*</h5>
-                        <input type="text" className="bio" onChange={(v) => seBio(v.target.value)} />
+                        <input type="text" className="bio" onChange={(v) => setAbout(v.target.value)} />
                     </label>
                 </form>
 
